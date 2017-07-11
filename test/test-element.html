@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Hello world</h1>
+    <div id="test-id"></div>
+</body>
+<script src="../lib/element.js"></script>
+<script type="text/javascript">
+    function handleClick(elem, event) {
+        elem.setCss({
+            backgroundColor: 'white',
+            color: 'black'
+        });
+        setTimeout(() => {
+            elem.setCss({
+                backgroundColor: 'cyan',
+                color: 'white'
+            });
+        }, 100);
+
+        let alertStr = 'center position is: ' + elem.position('center').x + ', ' + elem.position('center').y + '\n';
+        alertStr += 'left-top position is: '  + elem.position('left-top').x + '\n';
+        alertStr += 'left-bottom position is: '  + elem.position('left-bottom').y + '\n';
+        alertStr += 'right-top position is: '  + elem.position('right-top').x + '\n';
+        alertStr += 'right-bottom position is: '  + elem.position('right-bottom').y + '\n';
+        alert(alertStr);
+    }
+    // use query to create a JMElement
+    const parent = JMElement.query('#test-id');
+    // use tag name to create a JMElement
+    const elem = new JMElement('div');
+    // JMElement set attribute method
+    elem.setAttribute('name', 'button');
+    // set innerText, also innerHTML
+    elem.innerText('Click Me!');
+    // set style
+    elem.setStyle('backgroundColor', 'Cyan');
+    // set Css
+    elem.setCss({
+        color: 'white',
+        height: '48px',
+        width: '128px',
+        border: '1px solid rgba(0, 0, 0, 0.56)',
+        borderRadius: '4px',
+        lineHeight: '48px',
+        textAlign: 'center',
+        cursor: 'pointer',
+        boxShadow: '2px 2px 2px 1px rgba(0, 0, 0, 0.2)'
+    });
+    // set Id
+    elem.setId('test-child-node');
+    // add event listener, handle function can receive elem and event
+    elem.listen('click', handleClick);
+    // append element to another element
+    elem.appendTo(parent);
+</script>
+</html>
