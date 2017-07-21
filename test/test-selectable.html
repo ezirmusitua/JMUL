@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <title>JS Bin</title>
+</head>
+<body>
+<div>
+    <input type="text" id="textInput" value="Hello World"/>
+    <input type="number" id="rangeStart" value="0"/>
+    <input type="number" id="rangeEnd" value="-1"/>
+</div>
+<div>
+    <button onclick="selectText()">Select Text</button>
+    <button onclick="getInputSelection()">Alert Selection</button>
+</div>
+</body>
+<script src="../lib/element.js"></script>
+<script src="../lib/decorator.js"></script>
+<script>
+    console.log(JMElement.query('#textInput'));
+    const inputElem = selectable(JMElement.query('#textInput'));
+    const rangeStartElem = JMElement.query('#rangeStart');
+    const rangeEndElem = JMElement.query('#rangeEnd');
+    function selectText() {
+        inputElem.select(rangeStartElem.value(), rangeEndElem.value());
+    }
+    function getInputSelection() {
+        alert(inputElem.getSelection());
+    }
+</script>
+</html>
