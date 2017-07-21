@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b0278b2-cc3f-44fb-8f51-d201a7abbf3b" name="Default" comment="Add selectable decorator for JElement">
+    <list default="true" id="0b0278b2-cc3f-44fb-8f51-d201a7abbf3b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/GM_xmlhttpRequester.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/test-request.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/decorator.js" afterPath="$PROJECT_DIR$/lib/decorator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/element.js" afterPath="$PROJECT_DIR$/lib/element.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test-selectable.html" afterPath="$PROJECT_DIR$/test/test-selectable.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/request.js" afterPath="$PROJECT_DIR$/lib/request.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,16 +20,46 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="3029" />
+    <option name="totalTimeSeconds" value="8940" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="decorator.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="decorator.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/decorator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+            <state relative-caret-position="390">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="request.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/request.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="183" column="25" lean-forward="true" selection-start-line="183" selection-start-column="25" selection-end-line="183" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test-request.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/test-request.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="25" column="110" lean-forward="false" selection-start-line="25" selection-start-column="110" selection-end-line="25" selection-end-column="110" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GM_xmlhttpRequester.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/GM_xmlhttpRequester.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -37,8 +68,8 @@
       <file leaf-file-name="test-selectable.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/test-selectable.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="29" column="62" lean-forward="true" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
+            <state relative-caret-position="214">
+              <caret line="19" column="43" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="40" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -59,8 +90,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -82,6 +113,9 @@
         <option value="$PROJECT_DIR$/lib/element.js" />
         <option value="$PROJECT_DIR$/test/test-selectable.html" />
         <option value="$PROJECT_DIR$/lib/decorator.js" />
+        <option value="$PROJECT_DIR$/lib/request.js" />
+        <option value="$PROJECT_DIR$/test/test-request.html" />
+        <option value="$PROJECT_DIR$/test/GM_xmlhttpRequester.js" />
       </list>
     </option>
   </component>
@@ -126,6 +160,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="JMUL" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JMUL" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JMUL" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -355,7 +403,14 @@
       <option name="project" value="LOCAL" />
       <updated>1500647290334</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add copyToClipboard in selectable decorator">
+      <created>1500648149983</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1500648149983</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -397,7 +452,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add selectable decorator for JElement" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add selectable decorator for JElement" />
+    <MESSAGE value="Add copyToClipboard in selectable decorator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add copyToClipboard in selectable decorator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -485,18 +541,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/test-selectable.html">
+    <entry file="file://$PROJECT_DIR$/lib/decorator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="29" column="62" lean-forward="true" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
+        <state relative-caret-position="390">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/decorator.js">
+    <entry file="file://$PROJECT_DIR$/lib/request.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+        <state relative-caret-position="260">
+          <caret line="183" column="25" lean-forward="true" selection-start-line="183" selection-start-column="25" selection-end-line="183" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test-selectable.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="19" column="43" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="40" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test-request.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="25" column="110" lean-forward="false" selection-start-line="25" selection-start-column="110" selection-end-line="25" selection-end-column="110" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/GM_xmlhttpRequester.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>

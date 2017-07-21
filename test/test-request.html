@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <title>JS Bin</title>
+</head>
+<body>
+<div>
+    <input type="text" id="urlInput" value="https://httpbin.org/anything"/>
+    <select id="methodInput"> <!--Supplement an id here instead of using 'name'-->
+        <option value="GET" selected>GET</option>
+        <option value="POST">POST</option>
+        <option value="PUT">PUT</option>
+        <option value="HEAD">HEAD</option>
+        <option value="PATCH">PATCH</option>
+        <option value="DELETE">DELETE</option>
+    </select>
+</div>
+<div>
+    <pre id="displayElem"></pre>
+</div>
+<div>
+    <button onclick="sendRequest()">Send Request</button>
+</div>
+</body>
+<script src="https://github.com/scriptish/scriptish/blob/master/extension/modules/api/GM_xmlhttpRequester.js"></script>
+<script src="../lib/element.js"></script>
+<script src="../lib/request.js"></script>
+<script>
+    const urlInput = JMElement.query('#urlInput');
+    const methodInput = JMElement.query('#methodInput');
+    const displayDiv = JMElement.query('#displayDiv');
+    function sendRequest() {
+        const method = methodInput.element.options[methodInput.element.selectedIndex].value;
+        const headers = new JMRequestHeader({});
+        headers.setContentType('application/json');
+        new JMRequest(method, urlInput.value(), {headers: headers}).send().then(function (res) {
+            console.log(123);
+        });
+
+    }
+</script>
+</html>
