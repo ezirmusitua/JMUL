@@ -13,6 +13,7 @@
 <div>
     <button onclick="selectText()">Select Text</button>
     <button onclick="getInputSelection()">Alert Selection</button>
+    <button onclick="copyToClipboard()">Copy To Clipboard</button>
 </div>
 </body>
 <script src="../lib/element.js"></script>
@@ -26,7 +27,15 @@
         inputElem.select(rangeStartElem.value(), rangeEndElem.value());
     }
     function getInputSelection() {
-        alert(inputElem.getSelection());
+        alert(inputElem.getSelection(rangeStartElem.value(), rangeEndElem.value()));
+    }
+    function copyToClipboard() {
+        try {
+            inputElem.copyToClipboard();
+            alert('Copy successed. ');
+        } catch (e) {
+            alert('Copy failed. ');
+        }
     }
 </script>
 </html>
