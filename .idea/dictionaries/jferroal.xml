@@ -8,6 +8,8 @@
       <w>onreadystatechange</w>
       <w>ontimeout</w>
       <w>readystatechange</w>
+      <w>xhrhttp</w>
+      <w>xmlhttp</w>
     </words>
   </dictionary>
 </component>

@@ -6,38 +6,53 @@
 </head>
 <body>
 <div>
-    <input type="text" id="urlInput" value="https://httpbin.org/anything"/>
+    <input type="text" id="urlInput" value="https://httpbin.org/"/>
     <select id="methodInput"> <!--Supplement an id here instead of using 'name'-->
         <option value="GET" selected>GET</option>
         <option value="POST">POST</option>
         <option value="PUT">PUT</option>
-        <option value="HEAD">HEAD</option>
         <option value="PATCH">PATCH</option>
         <option value="DELETE">DELETE</option>
     </select>
 </div>
 <div>
+    <p>
+        <b> Support By <a href="https://httpbin.org">httpbin.org</a></b>
+        <br />
+        <b>GET</b> /get Returns GET data.
+        <br/>
+        <b>POST</b> /post Returns POST data.
+        <br/>
+        <b>PATCH</b> /patch Returns PATCH data.
+        <br/>
+        <b>PUT</b> /put Returns PUT data.
+        <br/>
+        <b>DELETE</b> /delete Returns DELETE data
+    </p>
     <pre id="displayElem"></pre>
 </div>
 <div>
     <button onclick="sendRequest()">Send Request</button>
 </div>
 </body>
-<script src="https://github.com/scriptish/scriptish/blob/master/extension/modules/api/GM_xmlhttpRequester.js"></script>
+<script src="./mock-gmxhr.js"></script>
 <script src="../lib/element.js"></script>
 <script src="../lib/request.js"></script>
 <script>
     const urlInput = JMElement.query('#urlInput');
     const methodInput = JMElement.query('#methodInput');
-    const displayDiv = JMElement.query('#displayDiv');
+    const displayDiv = JMElement.query('#displayElem');
     function sendRequest() {
         const method = methodInput.element.options[methodInput.element.selectedIndex].value;
         const headers = new JMRequestHeader({});
         headers.setContentType('application/json');
-        new JMRequest(method, urlInput.value(), {headers: headers}).send().then(function (res) {
-            console.log(123);
+        const req = new JMRequest(method, urlInput.value(), {headers: {}});
+        if (['GET', 'DELETE', 'HEAD'].indexOf(method) < 0) {
+            req.setData({payload: 'hello world'});
+        }
+        req.send().then(function (res) {
+            displayDiv.innerText(res);
         });
-
     }
 </script>
 </html>

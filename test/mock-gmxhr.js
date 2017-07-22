@@ -1,0 +1,30 @@
+const Events = ['onload', 'onerror', 'onreadystatechange', 'onprogress', 'onabort', 'ontimeout'];
+function GM_xmlhttpRequest(options) {
+    console.log(options)
+    const req = new XMLHttpRequest();
+    if (options.headers && typeof options.headers === 'object') {
+        const headers = options.headers;
+        for (const key of Object.keys(headers)) {
+            req.setRequestHeader(key, headers[key]);
+        }
+    }
+    for (const key of Events) {
+        if (options[key] && typeof options[key] === 'function') {
+            req[key] = options[key];
+        }
+    }
+    req.onreadystatechange = () => {
+        if (req.readyState === XMLHttpRequest.DONE && req.status === 200) {
+            req.onload(req.response);
+        }
+        if (req.readyState === XMLHttpRequest.DONE && req.status > 399) {
+            req.onerror(req.response);
+        }
+        if (req.readyState === XMLHttpRequest.LOADING) {
+            req.onprogress(req.response)
+        }
+        options.onreadystatechange(req.response);
+    };
+    req.open(options.method, options.url);
+    req.send(options.data);
+}
