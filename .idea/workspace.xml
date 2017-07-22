@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b0278b2-cc3f-44fb-8f51-d201a7abbf3b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/GM_xmlhttpRequester.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/test-request.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/decorator.js" afterPath="$PROJECT_DIR$/lib/decorator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/request.js" afterPath="$PROJECT_DIR$/lib/request.js" />
-    </list>
+    <list default="true" id="0b0278b2-cc3f-44fb-8f51-d201a7abbf3b" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -20,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="8940" />
+    <option name="totalTimeSeconds" value="9008" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
