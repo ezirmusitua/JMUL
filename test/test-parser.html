@@ -10,20 +10,33 @@
 
 </body>
 <script src="../lib/parser.js"></script>
+<script src="../lib/request.js"></script>
+<script src="../lib/decorator.js"></script>
+<script src="./mock-gmxhr.js"></script>
 <script>
-    const tmpStr = '<td class="className!">abc</td>\n' + '<td id="id!">bcd</td>\n' + '<td href="href!">ced</td>';
-    const classPattern = 'td@class(.*) | className |';
-    const idPattern = 'td@id(.*) | idName |';
-    const hrefPattern = 'td@href(.*) | hrefValue |';
-    const parser = new JMParser();
-    parser.addFilter('className', (res) => res[0].matches[0]);
-    parser.addFilter('idName', (res) => res[0].matches[0]);
-    parser.addFilter('hrefValue', (res) => res[0].matches[0]);
-    parser.addRule('className', classPattern);
-    parser.addRule('idName', idPattern);
-    parser.addRule('hrefValue', hrefPattern);
-    console.log(parser.rules.className(tmpStr));
-    console.log(parser.rules.idName(tmpStr));
-    console.log(parser.rules.hrefValue(tmpStr));
+//    <img hidefocus="true" src="//www.baidu.com/img/bd_logo1.png" width="270" height="129">
+//    const tmpStr = '<td class="className!">abc</td>\n' + '<td id="id!">bcd</td>\n' + '<td href="href!">ced</td>';
+//    const classPattern = 'td@class(.*) | className |';
+//    const idPattern = 'td@id(.*) | idName |';
+//    const hrefPattern = 'td@href(.*) | hrefValue |';
+//    const parser = new JMParser();
+//    parser.addFilter('className', (res) => res[0].matches[0]);
+//    parser.addFilter('idName', (res) => res[0].matches[0]);
+//    parser.addFilter('hrefValue', (res) => res[0].matches[0]);
+//    parser.addRule('className', classPattern);
+//    parser.addRule('idName', idPattern);
+//    parser.addRule('hrefValue', hrefPattern);
+//    console.log(parser.rules.className(tmpStr));
+//    console.log(parser.rules.idName(tmpStr));
+//    console.log(parser.rules.hrefValue(tmpStr));
+    const slideShow = 'slideshow@date(.*) | date |';
+    const bdParser = new JMParser();
+    bdParser.addFilter('date', (res) => console.log(res));
+    bdParser.addRule('slideShow', slideShow);
+    const bdRequest = addParser(new JMRequest('GET', 'https://httpbin.org/xml', {}), bdParser);
+    bdRequest.sendAndParse().then(function (res) {
+        console.log(res);
+    });
+
 </script>
 </html>

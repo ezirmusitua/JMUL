@@ -2,18 +2,20 @@ const Events = ['onload', 'onerror', 'onreadystatechange', 'onprogress', 'onabor
 function GM_xmlhttpRequest(options) {
     console.log(options)
     const req = new XMLHttpRequest();
-    if (options.headers && typeof options.headers === 'object') {
-        const headers = options.headers;
-        for (const key of Object.keys(headers)) {
-            req.setRequestHeader(key, headers[key]);
-        }
-    }
     for (const key of Events) {
         if (options[key] && typeof options[key] === 'function') {
             req[key] = options[key];
         }
     }
     req.onreadystatechange = () => {
+        if (req.readyState === XMLHttpRequest.OPENED) {
+            if (options.headers && typeof options.headers === 'object') {
+                const headers = options.headers;
+                for (const key of Object.keys(headers)) {
+                    req.setRequestHeader(key, headers[key]);
+                }
+            }
+        }
         if (req.readyState === XMLHttpRequest.DONE && req.status === 200) {
             req.onload(req.response);
         }
