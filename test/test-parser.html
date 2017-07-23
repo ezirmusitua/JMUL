@@ -11,17 +11,19 @@
 </body>
 <script src="../lib/parser.js"></script>
 <script>
-    const tmpStr = '<td class="className">abc</td>\n' + '<td id="id">bcd</td>\n' + '<td href="href">ced</td>';
-    console.log(tmpStr);
-    const classPattern = 'td@class(.*)';
-    const idPattern = 'td@id(.*)';
-    const hrefPattern = 'td@href(.*)';
+    const tmpStr = '<td class="className!">abc</td>\n' + '<td id="id!">bcd</td>\n' + '<td href="href!">ced</td>';
+    const classPattern = 'td@class(.*) | className |';
+    const idPattern = 'td@id(.*) | idName |';
+    const hrefPattern = 'td@href(.*) | hrefValue |';
     const parser = new JMParser();
-    parser.addRule('class', classPattern);
-    parser.addRule('id', idPattern);
-    parser.addRule('href', hrefPattern);
-    console.log(parser.resultAction.class(tmpStr));
-    console.log(parser.resultAction.id(tmpStr));
-    console.log(parser.resultAction.href(tmpStr));
+    parser.addFilter('className', (res) => res[0].matches[0]);
+    parser.addFilter('idName', (res) => res[0].matches[0]);
+    parser.addFilter('hrefValue', (res) => res[0].matches[0]);
+    parser.addRule('className', classPattern);
+    parser.addRule('idName', idPattern);
+    parser.addRule('hrefValue', hrefPattern);
+    console.log(parser.rules.className(tmpStr));
+    console.log(parser.rules.idName(tmpStr));
+    console.log(parser.rules.hrefValue(tmpStr));
 </script>
 </html>
