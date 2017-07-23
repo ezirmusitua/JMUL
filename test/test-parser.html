@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <title>JS Bin</title>
+</head>
+<body>
+
+<h1>Hello world</h1>
+
+</body>
+<script src="../lib/parser.js"></script>
+<script>
+    const tmpStr = '<td class="className">abc</td>\n' + '<td id="id">bcd</td>\n' + '<td href="href">ced</td>';
+    console.log(tmpStr);
+    const classPattern = 'td@class(.*)';
+    const idPattern = 'td@id(.*)';
+    const hrefPattern = 'td@href(.*)';
+    const parser = new JMXMLSelector();
+    parser.addRule('class', classPattern);
+    parser.addRule('id', idPattern);
+    parser.addRule('href', hrefPattern);
+    console.log(parser.resultAction.class(tmpStr));
+    console.log(parser.resultAction.id(tmpStr));
+    console.log(parser.resultAction.href(tmpStr));
+</script>
+</html>
