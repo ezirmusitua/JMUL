@@ -1,6 +1,5 @@
 const Events = ['onload', 'onerror', 'onreadystatechange', 'onprogress', 'onabort', 'ontimeout'];
 function GM_xmlhttpRequest(options) {
-    console.log(options)
     const req = new XMLHttpRequest();
     for (const key of Events) {
         if (options[key] && typeof options[key] === 'function') {
