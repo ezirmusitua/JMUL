@@ -5,22 +5,37 @@
     <title>JS Bin</title>
 </head>
 <body>
-
-<h1>Hello world</h1>
+<h1>Test Parser</h1>
+<div>
+    <p>fetch <a href="https://httpbin.org/xml">https://httpbin.org/xml</a></p>
+    <pre id="originResult">
+    </pre>
+    <pre id="parsedResult">
+    </pre>
+</div>
 
 </body>
+<script src="./mock-gmxhr.js"></script>
+<script src="../lib/element.js"></script>
 <script src="../lib/parser.js"></script>
 <script src="../lib/request.js"></script>
 <script src="../lib/decorator.js"></script>
-<script src="./mock-gmxhr.js"></script>
 <script>
-    const slideShow = 'slideshow@date(.*) | date |';
+    const originResult = JMElement.query('#originResult');
+    originResult.setCss({backgroundColor: 'red', color: 'white', padding: '8px'});
+    const parsedResult = JMElement.query('#parsedResult');
+    parsedResult.setCss({backgroundColor: 'green', color: 'white', padding: '8px'});
     const bdParser = new JMParser();
-    bdParser.addFilter('date', (res) => res[0].matches[0]);
-    bdParser.addRule('slideShow', slideShow);
+    bdParser.addFilter('attr', (res) => res[0].matches[0]);
+    bdParser.addRule('title', 'slideshow@title(.*) | attr |');
+    bdParser.addRule('date', 'slideshow@date(.*) | attr |');
+    bdParser.addRule('author', 'slideshow@author(.*) | attr |');
     const bdRequest = addParser(new JMRequest('GET', 'https://httpbin.org/xml', {}), bdParser);
-    bdRequest.sendAndParse().then(function (res) {
-        console.log(res);
+    bdRequest.send().then(function (res) {
+        originResult.innerText(res);
+        bdRequest.parse(res).then(function (res) {
+            parsedResult.innerText(JSON.stringify(res));
+        });
     });
 </script>
 </html>
