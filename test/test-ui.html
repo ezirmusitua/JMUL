@@ -5,51 +5,31 @@
     <title>Title</title>
 </head>
 <style>
-    .icon-button {
-        position: relative;
-        height: 128px;
-        width: 128px;
-        padding: 0;
-        border-radius: 50%;
-        cursor: pointer;
-        border: none;
-        outline: none;
-    }
-
-    .inactive {
-        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.08);
-    }
-
-    .active {
-        box-shadow: none;
-    }
-
-    .icon-button > img {
-        border-radius: 50%;
-        width: 100%;
-        height: 100%;
-    }
 </style>
 <body>
-<button class="icon-button inactive">
-    <img src="https://placehold.it/256x256"/>
-</button>
+    <div id="preview">
+        <div id="iconBtnPreview">
+            <p>Icon Button</p>
+            <pre>
+                (new JMButtonFactory()).create(type='icon', icon='icon-src', size=sizeOfIcon, clickFn=onClickCallback);
+            </pre>
+        </div>
+        <div id="normalBtnPreview">
+            <p>Icon Button</p>
+            <pre>
+                (new JMButtonFactory()).create(type='normal', label=labelOfBtn, size=sizeOfBtn({width: 96px/96, height: 32px/32}), clickFn=onClickCallback);
+            </pre>
+        </div>
+    </div>
 </body>
 <script src="../lib/element.js"></script>
+<script src="../lib/ui/button.js"></script>
 <script type="text/javascript">
-    let toi = null;
-    const button = JMElement.query('.icon-button');
-    button.listen('click', (e) => {
-        button.removeClass('inactive');
-        button.addClass('active');
-        if (toi) {
-            clearTimeout(toi);
-            toi = null;
-        }
-        toi = setTimeout(function () {
-            button.removeClass('active');
-            button.addClass('inactive');
-        }, 100);
-    });
+    const iconBtnPreviewArea = JMElement.query('#iconBtnPreview');
+    const iconBtn = (new JMButtonFactory()).create('icon', 'https://placehold.it/256x256', 32, (e) => alert(e));
+    iconBtn.appendTo(iconBtnPreviewArea);
+    const normalBtnPreviewArea = JMElement.query('#normalBtnPreview');
+    const normalBtn = (new JMButtonFactory()).create('icon', 'https://placehold.it/256x256', 32, (e) => alert(e));
+    normalBtn.appendTo(normalBtnPreviewArea);
 </script>
 </html>
