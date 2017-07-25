@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .icon-button {
+        position: relative;
+        height: 128px;
+        width: 128px;
+        padding: 0;
+        border-radius: 50%;
+        cursor: pointer;
+        border: none;
+        outline: none;
+    }
+
+    .inactive {
+        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.08);
+    }
+
+    .active {
+        box-shadow: none;
+    }
+
+    .icon-button > img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<body>
+<button class="icon-button inactive">
+    <img src="https://placehold.it/256x256"/>
+</button>
+</body>
+<script src="../lib/element.js"></script>
+<script type="text/javascript">
+    let toi = null;
+    const button = JMElement.query('.icon-button');
+    button.listen('click', (e) => {
+        button.removeClass('inactive');
+        button.addClass('active');
+        if (toi) {
+            clearTimeout(toi);
+            toi = null;
+        }
+        toi = setTimeout(function () {
+            button.removeClass('active');
+            button.addClass('inactive');
+        }, 100);
+    });
+</script>
+</html>
