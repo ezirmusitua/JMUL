@@ -26,10 +26,10 @@
 <script src="../lib/ui/button.js"></script>
 <script type="text/javascript">
     const iconBtnPreviewArea = JMElement.query('#iconBtnPreview');
-    const iconBtn = (new JMButtonFactory()).create('icon', 'https://placehold.it/256x256', 32, (e) => alert(e));
+    const iconBtn = (new JMButtonFactory()).create('icon', 'https://placehold.it/256x256', 32, (e) => alert(JSON.stringify(e)));
     iconBtn.appendTo(iconBtnPreviewArea);
     const normalBtnPreviewArea = JMElement.query('#normalBtnPreview');
-    const normalBtn = (new JMButtonFactory()).create('icon', 'https://placehold.it/256x256', 32, (e) => alert(e));
+    const normalBtn = (new JMButtonFactory()).create('normal', 'Gotcha', 32, (e) => alert(JSON.stringify(e)));
     normalBtn.appendTo(normalBtnPreviewArea);
 </script>
 </html>
