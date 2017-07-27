@@ -1,0 +1,9 @@
+{
+  "name": "JMUL",
+  "version": "0.1.0",
+  "description": "Monkey script utilities",
+  "main": "./lib/index.js",
+  "repository": "git@github.com:ezirmusitua/JMUL.git",
+  "author": "ezirmusitua <jferroal@gmail.com>",
+  "license": "MIT"
+}
