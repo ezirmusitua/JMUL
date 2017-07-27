@@ -8,8 +8,9 @@
     <h1>Hello world</h1>
     <div id="test-id"></div>
 </body>
-<script src="../lib/element.js"></script>
+<script src="../dist/bundle.js"></script>
 <script type="text/javascript">
+    const JMUL = require('JMUL');
     function handleClick(event) {
         elem.setCss({
             backgroundColor: 'white',
@@ -30,9 +31,9 @@
         alert(alertStr);
     }
     // use query to create a JMElement
-    const parent = JMElement.query('#test-id');
+    const parent = JMUL.Element.query('#test-id');
     // use tag name to create a JMElement
-    const elem = new JMElement('div');
+    const elem = new JMUL.Element('div');
     // JMElement set attribute method
     elem.setAttribute('name', 'button');
     // set innerText, also innerHTML
