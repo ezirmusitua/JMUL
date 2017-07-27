@@ -16,21 +16,19 @@
 
 </body>
 <script src="./mock-gmxhr.js"></script>
-<script src="../lib/element.js"></script>
-<script src="../lib/parser.js"></script>
-<script src="../lib/request.js"></script>
-<script src="../lib/decorator.js"></script>
+<script src="../dist/bundle.js"></script>
 <script>
-    const originResult = JMElement.query('#originResult');
+    const JMUL = require('JMUL');
+    const originResult = JMUL.Element.query('#originResult');
     originResult.setCss({backgroundColor: 'red', color: 'white', padding: '8px'});
-    const parsedResult = JMElement.query('#parsedResult');
+    const parsedResult = JMUL.Element.query('#parsedResult');
     parsedResult.setCss({backgroundColor: 'green', color: 'white', padding: '8px'});
-    const bdParser = new JMParser();
+    const bdParser = new JMUL.Parser();
     bdParser.addFilter('attr', (res) => res[0].matches[0]);
     bdParser.addRule('title', 'slideshow@title(.*) | attr |');
     bdParser.addRule('date', 'slideshow@date(.*) | attr |');
     bdParser.addRule('author', 'slideshow@author(.*) | attr |');
-    const bdRequest = addParser(new JMRequest('GET', 'https://httpbin.org/xml', {}), bdParser);
+    const bdRequest = JMUL.Decorator.addParser(new JMUL.Request('GET', 'https://httpbin.org/xml', {}), bdParser);
     bdRequest.send().then(function (res) {
         originResult.innerText(res);
         bdRequest.parse(res).then(function (res) {
