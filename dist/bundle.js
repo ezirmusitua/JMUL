@@ -4,6 +4,7 @@
 // @namespace https://greasyfork.org/users/34556
 // @version 0.1.0
 // @description  utilities for monkey scripts
+// @description:zh-cn 工具库  utilities for monkey scripts
 // @author jferroal
 // @grant GM_xmlhttpRequest
 // ==/UserScript==
