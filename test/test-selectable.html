@@ -16,12 +16,12 @@
     <button onclick="copyToClipboard()">Copy To Clipboard</button>
 </div>
 </body>
-<script src="../lib/element.js"></script>
-<script src="../lib/decorator.js"></script>
+<script src="../dist/bundle.js"></script>
 <script>
-    const inputElem = selectable(JMElement.query('#textInput'));
-    const rangeStartElem = JMElement.query('#rangeStart');
-    const rangeEndElem = JMElement.query('#rangeEnd');
+    const JMUL = require('JMUL');
+    const inputElem = JMUL.Decorator.selectable(JMUL.Element.query('#textInput'));
+    const rangeStartElem = JMUL.Element.query('#rangeStart');
+    const rangeEndElem = JMUL.Element.query('#rangeEnd');
     function selectText() {
         inputElem.select(rangeStartElem.value(), rangeEndElem.value());
     }
@@ -31,7 +31,7 @@
     function copyToClipboard() {
         try {
             inputElem.copyToClipboard();
-            alert('Copy successed. ');
+            alert('Copy success. ');
         } catch (e) {
             alert('Copy failed. ');
         }
