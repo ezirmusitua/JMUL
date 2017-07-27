@@ -5,6 +5,7 @@
 // @version 0.1.0
 // @description  utilities for monkey scripts
 // @description:zh-CN 工具库
+// @description:zh-cn 工具库
 // @author jferroal
 // @grant GM_xmlhttpRequest
 // ==/UserScript==
