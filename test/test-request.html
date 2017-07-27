@@ -36,17 +36,17 @@
 </div>
 </body>
 <script src="./mock-gmxhr.js"></script>
-<script src="../lib/element.js"></script>
-<script src="../lib/request.js"></script>
+<script src="../dist/bundle.js"></script>
 <script>
-    const urlInput = JMElement.query('#urlInput');
-    const methodInput = JMElement.query('#methodInput');
-    const displayDiv = JMElement.query('#displayElem');
+    const JMUL = require('JMUL');
+    const urlInput = JMUL.Element.query('#urlInput');
+    const methodInput = JMUL.Element.query('#methodInput');
+    const displayDiv = JMUL.Element.query('#displayElem');
     function sendRequest() {
         const method = methodInput.element.options[methodInput.element.selectedIndex].value;
-        const headers = new JMRequestHeader({});
+        const headers = new JMUL.Header({});
         headers.setContentType('application/json');
-        const req = new JMRequest(method, urlInput.value(), {headers: {}});
+        const req = new JMUL.Request(method, urlInput.value(), {headers: {}});
         if (['GET', 'DELETE', 'HEAD'].indexOf(method) < 0) {
             req.setData({payload: 'hello world'});
         }
