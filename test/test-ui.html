@@ -22,14 +22,14 @@
         </div>
     </div>
 </body>
-<script src="../lib/element.js"></script>
-<script src="../lib/ui/button.js"></script>
+<script src="../dist/bundle.js"></script>
 <script type="text/javascript">
-    const iconBtnPreviewArea = JMElement.query('#iconBtnPreview');
-    const iconBtn = (new JMButtonFactory()).create('icon', 'https://placehold.it/256x256', 32, (e) => alert(JSON.stringify(e)));
+    const JMUL = require('JMUL');
+    const iconBtnPreviewArea = JMUL.Element.query('#iconBtnPreview');
+    const iconBtn = JMUL.UI.Button.create('icon', 'https://placehold.it/256x256', 32, (e) => alert(JSON.stringify(e)));
     iconBtn.appendTo(iconBtnPreviewArea);
-    const normalBtnPreviewArea = JMElement.query('#normalBtnPreview');
-    const normalBtn = (new JMButtonFactory()).create('normal', 'Gotcha', 32, (e) => alert(JSON.stringify(e)));
+    const normalBtnPreviewArea = JMUL.Element.query('#normalBtnPreview');
+    const normalBtn = JMUL.UI.Button.create('normal', 'Gotcha', 32, (e) => alert(JSON.stringify(e)));
     normalBtn.appendTo(normalBtnPreviewArea);
 </script>
 </html>
