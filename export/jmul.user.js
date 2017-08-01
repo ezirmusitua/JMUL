@@ -145,11 +145,11 @@ class JMElement {
         return this;
     }
 
-    innerHTML(value) {
+    get innerHTML() {
         this.element.innerHTML = value;
     }
 
-    innerText(value) {
+    get innerText() {
         this.element.innerText = value;
     }
 
@@ -193,7 +193,7 @@ class JMElement {
         return this.element;
     }
 
-    value() {
+    get value() {
         return this.element.value;
     }
 
