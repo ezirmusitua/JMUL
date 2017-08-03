@@ -9,7 +9,7 @@ sed -i.old '1s;^;\// ==UserScript==\
 // @name              JMUL\
 // @name:zh-CN        自用脚本工具库\
 // @namespace         https://greasyfork.org/users/34556\
-// @version           0.1.1\
+// @version           0.1.2\
 // @description       utilities for monkey scripts\
 // @description:zh-CN 工具库\
 // @author            jferroal\
